@@ -1,0 +1,9 @@
+application.title=Play Sample Application
+
+user.name=name
+user.age=age
+user.org=organization
+user.info=User Info.
+
+edit=Edit
+save=Save

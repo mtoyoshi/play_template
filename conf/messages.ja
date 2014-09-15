@@ -1,0 +1,9 @@
+application.title=Playサンプルアプリケーション
+
+user.name=名前
+user.age=年齢
+user.org=組織
+user.info=ユーザー情報
+
+edit=編集
+save=保存

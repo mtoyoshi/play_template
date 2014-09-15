@@ -1,5 +1,23 @@
-@(message: String)
+@import play.api.i18n._
 
-@main("Welcome to Play") {
-    @play20.welcome(message)
+
+@main {
+  <div id="user_model">
+    <div id="list">
+      <ul v-repeat="users">
+        <li><span>@Messages("user.info")</span>{{name}}({{age}})</li>
+        <li><span>@Messages("user.org")</span>{{org.name}}</li>
+        <li v-on="click: edit({{$index}})" class="btn">@Messages("edit")</li>
+        <div id="edit_{{$index}}" class="edit">
+          <ul>
+            <div id="err_msg_{{$index}}"></div>
+            <li><span>@Messages("user.name")</span><input type="text" v-model="name"></li>
+            <li><span>@Messages("user.age")</span><input type="number" v-model="age"></li>
+            <li><span>@Messages("user.org")</span><input type="text" v-model="org.name"></li>
+            <button v-on="click: save({{$index}})">@Messages("save")</button>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div
 }
