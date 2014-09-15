@@ -1,5 +1,5 @@
 $ ->
-  jsXHR = $.getJSON("/user")
+  jsXHR = $.getJSON("/users")
   jsXHR.done((json) ->
     new Vue
       el: "#user_model"
@@ -13,7 +13,7 @@ $ ->
         "save": (index) ->
           $.ajax
             type: "post"
-            url: "/user/save"
+            url: "/users/update"
             data: JSON.stringify(this.users[index])
             contentType: "application/json"
           .done ->

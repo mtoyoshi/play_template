@@ -11,13 +11,13 @@ object UserController extends Controller {
     Ok(views.html.index())
   }
 
-  def save = Action { implicit request =>
+  def update = Action { implicit request =>
     val json = request.body.asJson
     println(json)
     Ok("i found!" + " " + json)
   }
 
-  def user = Action {
+  def list = Action {
     val json: JsValue = Json.arr(
       Json.obj(
         "id" -> 1,
